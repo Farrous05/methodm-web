@@ -471,7 +471,7 @@ p{font-size:clamp(15px,1.5vw,17px);line-height:1.7}
 .reporting-bullets li strong{color:var(--dark);font-weight:600}
 
 /* Dashboard preview wrapper */
-.reporting-preview{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);line-height:0;max-height:310px}
+.reporting-preview{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);line-height:0;max-height:210px}
 .reporting-preview-fade{position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(transparent,var(--white));pointer-events:none;z-index:2}
 
 /* Dashboard UI — shared */
@@ -515,7 +515,7 @@ p{font-size:clamp(15px,1.5vw,17px);line-height:1.7}
 .icp-reporting-text{max-width:620px}
 .icp-reporting-text h2{margin-bottom:10px}
 .icp-reporting-text p{color:var(--gray);font-size:15px;line-height:1.8;margin:0}
-.icp-dash-wrap{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 14px 44px rgba(0,0,0,.12);max-height:360px;line-height:0}
+.icp-dash-wrap{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 14px 44px rgba(0,0,0,.12);max-height:290px;line-height:0}
 .icp-dash-fade{position:absolute;bottom:0;left:0;right:0;height:130px;background:linear-gradient(transparent,var(--light));pointer-events:none;z-index:2}
 .icp-dash-caption{text-align:center;font-size:13px;color:var(--gray);margin-top:14px;line-height:1.6}
 .icp-dash-caption a{color:var(--red);font-weight:600;text-decoration:none}
