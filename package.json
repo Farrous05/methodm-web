@@ -1,0 +1,7 @@
+{
+  "name": "methodm-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MethodM static website with Vercel serverless contact form."
+}

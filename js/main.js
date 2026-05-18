@@ -65,10 +65,40 @@ document.addEventListener('DOMContentLoaded', function() {
   // Contact form
   var form = document.getElementById('contact-form');
   if (form) {
+    var submitBtn = document.getElementById('contact-submit');
+    var successEl = document.getElementById('form-success');
+    var errorEl = document.getElementById('form-error');
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var success = document.getElementById('form-success');
-      if (success) { form.style.display = 'none'; success.classList.add('visible'); }
+      if (errorEl) errorEl.style.display = 'none';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+      var data = {
+        name: form.name.value,
+        company: form.company.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        message: form.message.value,
+        meeting: form.meeting.checked,
+        honeypot: form.honeypot.value
+      };
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function(r) {
+        return r.json().catch(function(){ return { ok: r.ok }; });
+      }).then(function(body) {
+        if (body && body.ok) {
+          if (successEl) { form.style.display = 'none'; successEl.classList.add('visible'); }
+        } else {
+          throw new Error((body && body.error) || 'Request failed');
+        }
+      }).catch(function() {
+        if (errorEl) errorEl.style.display = 'block';
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+      });
     });
   }
 

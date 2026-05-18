@@ -10,6 +10,7 @@
 <meta property="og:title" content="Contact MethodM | Get in Touch | F&B Hospitality Consultancy Lebanon">
 <meta property="og:description" content="Get in touch with MethodM. Specialist F&B and hospitality consultancy based in Beirut, Lebanon. Start a conversation — no commitment, no pressure.">
 <meta property="og:url" content="https://www.methodmlb.com/contact">
+<meta property="og:image" content="https://www.methodmlb.com/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
@@ -32,6 +33,8 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ContactPage","name":"Contact MethodM","url":"https://www.methodmlb.com/contact","description":"Contact MethodM for F&B and hospitality consultancy services in Lebanon, Cyprus, and EMEA.","mainEntity":{"@type":"Organization","name":"MethodM","telephone":"+961-3-711-009","address":{"@type":"PostalAddress","addressLocality":"Beirut","addressCountry":"LB"},"contactPoint":{"@type":"ContactPoint","telephone":"+961-3-711-009","contactType":"customer service","areaServed":["Lebanon","Cyprus","EMEA"],"availableLanguage":["English","Arabic","French"]}}}
+</script><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.methodmlb.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://www.methodmlb.com/contact.html"}]}
 </script></head>
 <body class="page-body">
 <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -119,7 +122,7 @@
   <div class="container" style="max-width:800px;">
     <h2>Send us a message.</h2>
     <p class="form-intro">We read every message and respond within one business day.</p>
-    <form class="contact-form" id="contact-form" novalidate>
+    <form class="contact-form" id="contact-form" action="/api/contact" method="POST" novalidate>
       <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-grid">
         <div class="form-group">
@@ -148,10 +151,11 @@
         <label class="form-label" for="f-message">Message <span style="font-weight:400;color:var(--gray);">(optional)</span></label>
         <textarea id="f-message" name="message" rows="5" placeholder="Tell us about your operation and what you're looking for."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Send Message</button>
-      <p class="form-footnote">Your information is never shared with third parties. See our <a href="#">Privacy Policy</a>.</p>
+      <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
+      <p class="form-footnote">By submitting, you agree to our <a href="privacy.html">Privacy Policy</a>. Your information is never shared with third parties.</p>
     </form>
     <div class="form-success-msg" id="form-success">Thanks — we'll be in touch within one business day.</div>
+    <div class="form-error-msg" id="form-error" role="alert" aria-live="polite" style="display:none;color:var(--red);margin-top:12px;">Something went wrong. Please try again, or call <a href="tel:+9613711009">+961 3 711 009</a>.</div>
   </div>
 </div>
 
@@ -182,6 +186,7 @@
         <a href="about.html">About</a>
         <a href="insights.html">Insights</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
       </nav>
     </div>
     <div class="footer-bottom">
